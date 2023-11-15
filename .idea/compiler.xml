@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Students" />
-        <module name="DSList" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DSList" target="17" />
       <module name="untitled" target="1.7" />
     </bytecodeTargetLevel>
   </component>
