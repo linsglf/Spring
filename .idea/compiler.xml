@@ -13,7 +13,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="DSList" options="" />
+      <module name="DSList" options="-parameters" />
       <module name="Students" options="-parameters" />
     </option>
   </component>
