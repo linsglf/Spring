@@ -1,2 +1,9 @@
-package com.springpractice.DSList.repositories;public interface GameListRepository {
+package com.springpractice.DSList.repositories;
+
+import com.springpractice.DSList.entities.GameList;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface GameListRepository extends JpaRepository<GameList, Long> {
 }
