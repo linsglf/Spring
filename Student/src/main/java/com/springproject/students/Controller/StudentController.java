@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class StudentController {
 
@@ -20,16 +22,14 @@ public class StudentController {
 
     @GetMapping("/students")
     public String listStudents(Model model) {
-        Search se = new Search();
         model.addAttribute("students", studentService.getAllStudents());
-        model.addAttribute("Search", se);
+        model.addAttribute("Search", new Search());
         return "students";
     }
 
     @GetMapping("/students/new")
     public String createStudentForm(Model model) {
-        Student student = new Student();
-        model.addAttribute("student", student);
+        model.addAttribute("student", new Student());
         return "createStudent";
     }
 
@@ -59,5 +59,12 @@ public class StudentController {
     public String deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
         return "redirect:/students";
+    }
+
+    @GetMapping("/students/")
+    public String searchStudent(@RequestParam(name = "search", required = false) Search search, Model model) {
+        model.addAttribute("students", studentService.searchStudent(search.getSearch()));
+        model.addAttribute("Search", search);
+        return "students";
     }
 }

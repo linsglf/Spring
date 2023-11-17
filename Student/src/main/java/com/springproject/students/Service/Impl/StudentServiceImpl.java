@@ -42,4 +42,9 @@ public class StudentServiceImpl implements StudentService {
     public Student updateStudent(Student student) {
         return studentRepository.save(student);
     }
+
+    @Override
+    public List<Student> searchStudent(String search) {
+        return studentRepository.searchStudent(search);
+    }
 }

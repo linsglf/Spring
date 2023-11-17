@@ -15,4 +15,6 @@ public interface StudentService {
     Student getStudentById(Long id);
 
     Student updateStudent(Student student);
+
+    List<Student> searchStudent(String search);
 }
